@@ -109,9 +109,14 @@ export default {
       else{
         try {
         let res = await this.$store.dispatch("fetchVideoDetails");
-        if (!res.data[0]) {
+  
+        if(res.msg){
+          this.error = res.msg
+        }
+        else if (!res.data[0]) {
           this.error = "Oops, video is not found";
-        } else {
+        }
+        else {
           this.data = res.data[0];
           this.title = this.data.snippet.title
         }
