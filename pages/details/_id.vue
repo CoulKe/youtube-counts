@@ -133,10 +133,11 @@ export default {
     },
   },
   mounted() {
-    this.getVideoDetails();
-    setInterval(function () {
-      this.getVideoDetails();
-    }, 3000);
+    let _self = this;
+    this.intervalId = setInterval(() => _self.getVideoDetails(), 20000);
   },
+  beforeDestroy() {
+		clearInterval(this.intervalId);
+	}
 };
 </script>
