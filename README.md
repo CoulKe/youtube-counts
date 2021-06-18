@@ -1,5 +1,7 @@
 # youtube-counts
 Web app for displaying live youtube video views, likes, comments and dislikes counts.
+![Demo](demo.gif)
+
 
 ## Requirements
 Create a .env file by copying the .env.example file then go to https://developers.google.com to obtain the api key and the other auth tokens.
