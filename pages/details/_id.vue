@@ -1,6 +1,9 @@
 <template>
   <div>
     <div v-if="error"><Error :message="error" /></div>
+    <div class="loader-wrapper" v-if="!error && !offline && !data.snippet">
+      <img src="/loader.gif" alt="Loading">
+    </div>
     <div
       v-if="offline"
       class="bg-white m-auto max-w-4xl rounded p-4 text-center"
@@ -115,6 +118,7 @@ export default {
       if (!navigator.onLine) {
         return (this.offline = true);
       } else {
+        this.offline = false
         try {
           let res = await this.$store.dispatch("fetchVideoDetails");
 
@@ -141,3 +145,12 @@ export default {
 	}
 };
 </script>
+<style scoped>
+.loader-wrapper{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
