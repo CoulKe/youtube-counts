@@ -12,7 +12,19 @@ pre {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, monospace; /**Keep monospace for fallback */
 }
-::-webkit-scrollbar{
-  background: #f9fafb;
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f8ff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5455c0;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: blue;
 }
